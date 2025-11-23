@@ -51,6 +51,41 @@
       font-size: 0.9rem;
       color: #888;
     }
+
+    /* Masonry Gallery */
+.masonry {
+  column-count: 4;
+  column-gap: 1rem;
+}
+
+@media (max-width: 992px) {
+  .masonry { column-count: 3; }
+}
+
+@media (max-width: 768px) {
+  .masonry { column-count: 2; }
+}
+
+@media (max-width: 576px) {
+  .masonry { column-count: 1; }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+}
+
+.masonry-item img {
+  width: 100%;
+  height: auto;     /* ← Natural resolution */
+  border-radius: 6px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.masonry-item img:hover {
+  transform: scale(1.03);
+}
+
   </style>
 </head>
 
@@ -76,7 +111,6 @@
   </div>
 </nav>
 
-<!-- HERO WITH MASONRY-TILED PHOTO GALLERY -->
 <section class="py-5">
   <div class="container">
     <div class="text-center mb-5">
@@ -84,51 +118,45 @@
       <p class="lead mt-3">Game Development • Web Engineering • Software & Entertainment Production</p>
     </div>
 
-    <div class="row g-3">
-      <!-- Masonry photo tiles -->
-      <div class="col-6 col-md-4 col-lg-3">
-        <div class="overflow-hidden rounded" style="height: 200px;">
-          <img src="./images/1.png" class="img-fluid w-100 h-100 gallery-img" style="object-fit: cover;" alt="Gallery Image 1">
-        </div>
+    <!-- Masonry Gallery -->
+    <div class="masonry">
+
+      <div class="masonry-item">
+        <img src="./images/1.png" alt="Gallery Image 1">
       </div>
-      <div class="col-6 col-md-4 col-lg-3">
-        <div class="overflow-hidden rounded" style="height: 300px;">
-          <img src="./images/2.jpg" class="img-fluid w-100 h-100 gallery-img" style="object-fit: cover;" alt="Gallery Image 2">
-        </div>
+
+      <div class="masonry-item">
+        <img src="./images/2.jpg" alt="Gallery Image 2">
       </div>
-      <div class="col-6 col-md-4 col-lg-3">
-        <div class="overflow-hidden rounded" style="height: 250px;">
-          <img src="./images/3.jpg" class="img-fluid w-100 h-100 gallery-img" style="object-fit: cover;" alt="Gallery Image 3">
-        </div>
+
+      <div class="masonry-item">
+        <img src="./images/3.jpg" alt="Gallery Image 3">
       </div>
-      <div class="col-6 col-md-4 col-lg-3">
-        <div class="overflow-hidden rounded" style="height: 200px;">
-          <img src="./images/4.jpg" class="img-fluid w-100 h-100 gallery-img" style="object-fit: cover;" alt="Gallery Image 4">
-        </div>
+
+      <div class="masonry-item">
+        <img src="./images/4.jpg" alt="Gallery Image 4">
       </div>
-      <div class="col-6 col-md-4 col-lg-3">
-        <div class="overflow-hidden rounded" style="height: 280px;">
-          <img src="./images/5.png" class="img-fluid w-100 h-100 gallery-img" style="object-fit: cover;" alt="Gallery Image 5">
-        </div>
+
+      <div class="masonry-item">
+        <img src="./images/5.png" alt="Gallery Image 5">
       </div>
-      <div class="col-6 col-md-4 col-lg-3">
-        <div class="overflow-hidden rounded" style="height: 220px;">
-          <img src="https://picsum.photos/300/220?random=6" class="img-fluid w-100 h-100 gallery-img" style="object-fit: cover;" alt="Gallery Image 6">
-        </div>
+
+      <div class="masonry-item">
+        <img src="https://picsum.photos/300/220?random=6" alt="Gallery Image 6">
       </div>
-      <div class="col-6 col-md-4 col-lg-3">
-        <div class="overflow-hidden rounded" style="height: 300px;">
-          <img src="https://picsum.photos/300/300?random=7" class="img-fluid w-100 h-100 gallery-img" style="object-fit: cover;" alt="Gallery Image 7">
-        </div>
+
+      <div class="masonry-item">
+        <img src="https://picsum.photos/300/300?random=7" alt="Gallery Image 7">
       </div>
-      <div class="col-6 col-md-4 col-lg-3">
-        <div class="overflow-hidden rounded" style="height: 250px;">
-          <img src="https://picsum.photos/300/250?random=8" class="img-fluid w-100 h-100 gallery-img" style="object-fit: cover;" alt="Gallery Image 8">
-        </div>
+
+      <div class="masonry-item">
+        <img src="https://picsum.photos/300/250?random=8" alt="Gallery Image 8">
       </div>
+
     </div>
   </div>
 </section>
+
 
 <!-- FEATURED VIDEOS SECTION (THEATER MODE) -->
 <section id="videos" class="py-5 bg-dark">
@@ -136,18 +164,21 @@
     <h2 class="section-title text-light mb-5">🎬 Featured Videos</h2>
 
     <div class="row align-items-center mb-5">
-      <div class="col-md-6 mb-3 mb-md-0 video-frame">
-        <div class="ratio ratio-16x9">
-          <video controls>
-            <source src="videos/sample1.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="col-md-6 text-light">
-        <h4>Video Title 1</h4>
-        <p>This video showcases gameplay, animation, or a project demo. Include a short description of what is featured and the tools or technologies used.</p>
-      </div>
-    </div>
+<div class="col-md-6 mb-3 mb-md-0 video-frame">
+  <div class="ratio ratio-16x9">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wEaRxrkDP0M?si=QvDLrpT9GALdaycb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+  </div>
+</div>
+
+
+  <div class="col-md-6 text-light">
+    <h4>Video Title 1</h4>
+    <p>This video showcases gameplay, animation, or a project demo. Include a short description of what is featured and the tools or technologies used.</p>
+  </div>
+</div>
+
 
     <div class="row align-items-center mb-5 flex-md-row-reverse">
       <div class="col-md-6 mb-3 mb-md-0 video-frame">
