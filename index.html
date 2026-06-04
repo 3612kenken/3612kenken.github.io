@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfolio | Developer</title>
 
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
@@ -53,130 +52,147 @@
     }
 
     /* Masonry Gallery */
-.masonry {
-  column-count: 4;
-  column-gap: 1rem;
-}
+    .masonry {
+      column-count: 4;
+      column-gap: 1rem;
+    }
 
-@media (max-width: 992px) {
-  .masonry { column-count: 3; }
-}
+    @media (max-width: 992px) {
+      .masonry { column-count: 3; }
+    }
 
-@media (max-width: 768px) {
-  .masonry { column-count: 2; }
-}
+    @media (max-width: 768px) {
+      .masonry { column-count: 2; }
+    }
 
-@media (max-width: 576px) {
-  .masonry { column-count: 1; }
-}
+    @media (max-width: 576px) {
+      .masonry { column-count: 1; }
+    }
 
-.masonry-item {
-  break-inside: avoid;
-  margin-bottom: 1rem;
-}
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: 1rem;
+    }
 
-.masonry-item img {
-  width: 100%;
-  height: auto;     /* ← Natural resolution */
-  border-radius: 6px;
-  transition: transform 0.3s ease-in-out;
-}
+    .masonry-item img {
+      width: 100%;
+      height: auto;     /* ← Natural resolution */
+      border-radius: 6px;
+      transition: transform 0.3s ease-in-out;
+    }
 
-.masonry-item img:hover {
-  transform: scale(1.03);
-}
+    .masonry-item img:hover {
+      transform: scale(1.03);
+    }
 
-/* Carousel styles */
-.custom-carousel {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(180deg, #0f1114, #0b0c0e);
-  border-radius: 8px;
-}
-.carousel-track {
-  display: flex;
-  transition: transform 0.5s ease;
-}
-.carousel-slide {
-  min-width: 100%;
-  user-select: none;
-}
-.carousel-slide img {
-  display: block;
-  width: 100%;
-  height: 360px;
-  object-fit: cover;
-}
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 5;
-  background: rgba(0,0,0,0.35);
-  border: none;
-  color: #fff;
-  font-size: 2rem;
-  width: 44px;
-  height: 60px;
-}
-.featured-video {
-    max-width: 1400px;
-    margin: 0 auto 4rem;
-    background: #111;
-    border-radius: 12px;
-    overflow: hidden;
-}
-.featured-video .video-info {
-    padding: 1.5rem;
-}
+    /* Carousel styles */
+    .custom-carousel {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, #0f1114, #0b0c0e);
+      border-radius: 8px;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    .carousel-slide {
+      min-width: 100%;
+      user-select: none;
+    }
+    .carousel-slide img {
+      display: block;
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 5;
+      background: rgba(0,0,0,0.35);
+      border: none;
+      color: #fff;
+      font-size: 2rem;
+      width: 44px;
+      height: 60px;
+    }
+    .featured-video {
+        max-width: 1400px;
+        margin: 0 auto 4rem;
+        background: #111;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+    .featured-video .video-info {
+        padding: 1.5rem;
+    }
 
+    /* Styling for Certificate Tiles */
+    .cert-image-tile {
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: 8px;
+      border: 2px solid #2b2f36;
+      background-color: #16181c;
+      transition: transform 0.25s ease-in-out, border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+    }
 
+    .cert-image-tile:hover {
+      transform: scale(1.03);
+      border-color: #0d6efd;
+      box-shadow: 0 8px 24px rgba(13, 110, 253, 0.2);
+    }
 
-.video-frame {
-    overflow: hidden;
-    border-radius: 10px;
-}
+    .cert-image-tile img {
+      width: 100%;
+      height: 240px; /* Forces uniform thumbnail height across your grid layout */
+      object-fit: cover; /* Crops image neatly into its thumbnail bounding box */
+      display: block;
+    }
 
-.video-frame iframe {
-    transition: transform .3s ease;
-}
+    .video-frame {
+        overflow: hidden;
+        border-radius: 10px;
+    }
 
-.video-frame:hover iframe {
-    transform: scale(1.02);
-}
-.carousel-btn.prev { left: 8px; }
-.carousel-btn.next { right: 8px; }
-.carousel-dots { text-align:center; padding:10px 0; }
-.carousel-dot { display:inline-block; width:10px; height:10px; border-radius:50%; background:#555; margin:0 6px; cursor:pointer; }
-.carousel-dot.active { background:#0d6efd; }
+    .video-frame iframe {
+        transition: transform .3s ease;
+    }
 
-/* Gallery overlay and modal */
-.figure { position: relative; display:block; }
-.overlay {
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  background: linear-gradient(180deg, transparent, rgba(0,0,0,0.6));
-  color: #fff;
-  padding: 10px;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-.figure:hover .overlay { opacity: 1; }
-.overlay h5 { margin:0; font-size:0.95rem; }
+    .video-frame:hover iframe {
+        transform: scale(1.02);
+    }
+    .carousel-btn.prev { left: 8px; }
+    .carousel-btn.next { right: 8px; }
+    .carousel-dots { text-align:center; padding:10px 0; }
+    .carousel-dot { display:inline-block; width:10px; height:10px; border-radius:50%; background:#555; margin:0 6px; cursor:pointer; }
+    .carousel-dot.active { background:#0d6efd; }
 
-.modal-overlay {
-  position: fixed; inset:0; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,0.7); z-index: 9999;
-}
-.modal-content-custom { max-width: 90%; max-height: 90%; }
-.modal-content-custom img { width: 100%; height: auto; border-radius:6px; }
+    /* Gallery overlay and modal */
+    .figure { position: relative; display:block; }
+    .overlay {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      background: linear-gradient(180deg, transparent, rgba(0,0,0,0.6));
+      color: #fff;
+      padding: 10px;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    .figure:hover .overlay { opacity: 1; }
+    .overlay h5 { margin:0; font-size:0.95rem; }
 
-
+    .modal-overlay {
+      position: fixed; inset:0; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,0.7); z-index: 9999;
+    }
+    .modal-content-custom { max-width: 90%; max-height: 90%; }
+    .modal-content-custom img { width: 100%; height: auto; border-radius:6px; }
   </style>
 </head>
-
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark py-3">
   <div class="container">
     <a class="navbar-brand fw-bold fs-3" href="#">Codewarriork3nz Portfolio</a>
@@ -190,19 +206,17 @@
         <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
         <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
         <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
-        <li class="nav-item"><a href="#trainings" class="nav-link">Trainings</a></li>
+        <li class="nav-item"><a href="#certificates" class="nav-link">Certificates</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-
-<!-- CAROUSEL -->
 <section id="hero-carousel" class="py-4">
-      <div class="text-center mb-5">
-      <h1 class="fw-bold display-4">Developer, Creator & Digital Artist</h1>
-      <p class="lead mt-3">Game Development • Web Engineering • Software & Entertainment Production</p>
-    </div>
+  <div class="text-center mb-5">
+    <h1 class="fw-bold display-4">Developer, Creator & Digital Artist</h1>
+    <p class="lead mt-3">Game Development • Web Engineering • Software & Entertainment Production</p>
+  </div>
   <div class="container">
     <div class="custom-carousel" id="customCarousel" aria-label="Image carousel">
       <button class="carousel-btn prev" aria-label="Previous">‹</button>
@@ -213,13 +227,10 @@
   </div>
 </section>
 
-<!-- MAJOR ACCOMPLISHMENTS / HIGHLIGHTS -->
 <section id="highlights" class="py-5 bg-dark bg-gradient text-light">
   <div class="container">
     <h2 class="section-title text-light mb-4">Major Accomplishments & Highlights</h2>
-    
     <div class="row g-4">
-      
       <div class="col-md-6 col-lg-4">
         <div class="card h-100 border-start border-primary border-4 p-4 shadow-sm" style="background-color: #16181c;">
           <div class="d-flex align-items-center mb-3">
@@ -230,7 +241,6 @@
           <p class="card-text text-light">Led municipal multimedia production and developed core systems including the official website, civil registry system, DTR system, and barangay profiling utilities.</p>
         </div>
       </div>
-
       <div class="col-md-6 col-lg-4">
         <div class="card h-100 border-start border-warning border-4 p-4 shadow-sm" style="background-color: #16181c;">
           <div class="d-flex align-items-center mb-3">
@@ -241,7 +251,6 @@
           <p class="card-text text-light">Core developer for the team nominated to the prestigious <strong>National Level-Up 2 Event</strong> in Laoag, Ilocos Norte under the Professional Category.</p>
         </div>
       </div>
-
       <div class="col-md-6 col-lg-4">
         <div class="card h-100 border-start border-success border-4 p-4 shadow-sm" style="background-color: #16181c;">
           <div class="d-flex align-items-center mb-3">
@@ -252,7 +261,6 @@
           <p class="card-text text-light">Co-developed MarSU Website Phase 1 and fully engineered the institutional Customer Satisfaction Survey System for administrators and clients.</p>
         </div>
       </div>
-
       <div class="col-md-6 col-lg-6">
         <div class="card h-100 border-start border-info border-4 p-4 shadow-sm" style="background-color: #16181c;">
           <div class="d-flex align-items-center mb-3">
@@ -263,7 +271,6 @@
           <p class="card-text text-light">Recognized for exceptionally high teaching effectiveness ratings across advanced curriculum tracks: Software Programming, Game Development, and Ethical Hacking.</p>
         </div>
       </div>
-
       <div class="col-md-12 col-lg-6">
         <div class="card h-100 border-start border-danger border-4 p-4 shadow-sm" style="background-color: #16181c;">
           <div class="d-flex align-items-center mb-3">
@@ -274,192 +281,114 @@
           <p class="card-text text-light">Authored and presented research globally, delivering viable functional prototypes and MVPs leveraging <strong>Machine Learning</strong> and <strong>Blockchain architecture</strong>.</p>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-
-<!-- FEATURED VIDEOS SECTION (THEATER MODE) -->
- <section id="videos" class=" bg-dark py-5 ">
-  
+<section id="videos" class=" bg-dark py-5 ">
   <div class="container">
     <h2 class="section-title text-light mb-5"> Featured Project</h2>
-<!-- FEATURED VIDEO -->
-<div class="featured-video">
-    <div class="ratio ratio-16x9">
-        <iframe 
-            src="https://www.youtube.com/embed/wEaRxrkDP0M?si=N1Lx3l5kWdliPXQb"
-            title="Monsters of War: Domain Rule Trailer"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-        </iframe>
+    <div class="featured-video">
+        <div class="ratio ratio-16x9">
+            <iframe 
+                src="https://www.youtube.com/embed/wEaRxrkDP0M?si=N1Lx3l5kWdliPXQb"
+                title="Monsters of War: Domain Rule Trailer"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+        <div class="video-info text-light">
+            <h3>
+                Monsters of War: Domain Rule (MWDR) - Pre-production Trailer  
+                <span class="badge bg-info text-dark">On-going</span>
+            </h3>
+            <p class="lead mb-0">
+                A PvPvE war-action strategy game where players command military forces,
+                capture strategic domains, and battle rival factions alongside
+                extinction-level monsters. Featuring third-person combat, vehicles,
+                AI squad support, and dynamic territory warfare.
+            </p>
+        </div>
     </div>
+  </div>
 
-    <div class="video-info text-light">
-        <h3>
-            Monsters of War: Domain Rule (MWDR) - Pre-production Trailer  
-            <span class="badge bg-info text-dark">On-going</span>
-        </h3>
-
-        <p class="lead mb-0">
-            A PvPvE war-action strategy game where players command military forces,
-            capture strategic domains, and battle rival factions alongside
-            extinction-level monsters. Featuring third-person combat, vehicles,
-            AI squad support, and dynamic territory warfare.
-        </p>
-    </div>
-</div>
-</div>
-
-  
   <div class="container">
     <h3 class="section-title text-light mb-5">Other Featured Projects</h3>
-<h4 class="text-info mb-3"> Website Development</h4>
-<hr class="border-secondary mb-4">
+    <h4 class="text-info mb-3"> Website Development</h4>
+    <hr class="border-secondary mb-4">
     <div class="row align-items-center mb-5">
-<div class="col-md-6 mb-3 mb-md-0 video-frame">
-  <div class="ratio ratio-16x9">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/cigNz0JIuHQ?si=t6ixuGZGFpACdHgZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> </div>
-</div>
-
-
-  <div class="col-md-6 text-light">
-    <h4>Marinduque State University website (Phase 1) <small><span class="badge bg-info text-dark">On-going</span></small></small></h4>
-   <p>Contributed to the design and development of the university's official website, focusing on establishing a functional, user-friendly, and responsive web platform to enhance information dissemination, accessibility, and digital presence for students, faculty, and stakeholders.</p>
-</div>
-</div>
-
+      <div class="col-md-6 mb-3 mb-md-0 video-frame">
+        <div class="ratio ratio-16x9">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/cigNz0JIuHQ?si=t6ixuGZGFpACdHgZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
+        </div>
+      </div>
+      <div class="col-md-6 text-light">
+        <h4>Marinduque State University website (Phase 1) <small><span class="badge bg-info text-dark">On-going</span></small></h4>
+        <p>Contributed to the design and development of the university's official website, focusing on establishing a functional, user-friendly, and responsive web platform to enhance information dissemination, accessibility, and digital presence for students, faculty, and stakeholders.</p>
+      </div>
+    </div>
 
     <div class="row align-items-center mb-5 flex-md-row-reverse">
       <div class="col-md-6 mb-3 mb-md-0 video-frame">
         <div class="ratio ratio-16x9">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/4VFtFD0ZAuQ?si=CkQ3dikzkDFwRDnN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  </div>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/4VFtFD0ZAuQ?si=CkQ3dikzkDFwRDnN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
       </div>
       <div class="col-md-6 text-light">
         <h4>Customer Satisfaction Survey System (2024)</h4>
-       <p>A demonstration of the admin panel for managing and monitoring customer feedback efficiently.</p>
-</div>
+        <p>A demonstration of the admin panel for managing and monitoring customer feedback efficiently.</p>
+      </div>
     </div>
-
-
   </div>
 
   <div class="container">
-<h4 class="text-info mb-3"> Game Development</h4>
-<hr class="border-secondary mb-4">
-
+    <h4 class="text-info mb-3"> Game Development</h4>
+    <hr class="border-secondary mb-4">
     <div class="row align-items-center mb-5">
-<div class="col-md-6 mb-3 mb-md-0 video-frame">
-  <div class="ratio ratio-16x9">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/wEaRxrkDP0M?si=N1Lx3l5kWdliPXQb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-</div>
-
-
-  <div class="col-md-6 text-light">
-    <h4>Marinduque Ground Zero: Command & Consequence <small><span class="badge bg-info text-dark">On-going</span></small></h4>
-   <p>A 3D HD disaster and rescue strategy game, featuring city-building mechanics and mission-based gameplay.</p>
-</div>
-</div>
-
+      <div class="col-md-6 mb-3 mb-md-0 video-frame">
+        <div class="ratio ratio-16x9">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/wEaRxrkDP0M?si=N1Lx3l5kWdliPXQb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="col-md-6 text-light">
+        <h4>Marinduque Ground Zero: Command & Consequence <small><span class="badge bg-info text-dark">On-going</span></small></h4>
+        <p>A 3D HD disaster and rescue strategy game, featuring city-building mechanics and mission-based gameplay.</p>
+      </div>
+    </div>
 
     <div class="row align-items-center mb-5 flex-md-row-reverse">
       <div class="col-md-6 mb-3 mb-md-0 video-frame">
         <div class="ratio ratio-16x9">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ePi22RuTPZc?si=6M0GS1Lk-9aINKeL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/ePi22RuTPZc?si=6M0GS1Lk-9aINKeL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
       </div>
       <div class="col-md-6 text-light">
-       <h4>Project Tumba - Team CTRL ALT Defeat</h4>
-       <p>As lead developer from our game development team nominated to enter national Level-up 2 event at Laoag Ilocos Norte in the professional category. The game contains MVPs (Minimum Viable Products) and functional prototypes.</p>
+        <h4>Project Tumba - Team CTRL ALT Defeat</h4>
+        <p>As lead developer from our game development team nominated to enter national Level-up 2 event at Laoag Ilocos Norte in the professional category. The game contains MVPs (Minimum Viable Products) and functional prototypes.</p>
+      </div>
     </div>
-    </div>
-
-
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects" class="py-5" style="display: none;">
+<section class="py-5 " id="gallery">
   <div class="container">
-    <h2 class="section-title">Featured Projects</h2>
+    <h2 class="section-title text-light mb-5">Gallery</h2>
+    <div class="masonry" id="masonryGrid"></div>
 
-    <!-- Games -->
-    <h4 class="mt-4 mb-3">🎮 Games</h4>
-    <div class="row g-4 mb-5">
-      <div class="col-md-4">
-        <div class="card p-3">
-          <img src="images/game1.jpg" alt="Game Project" class="img-fluid">
-          <h5 class="mt-3">Game Title 1</h5>
-          <p>Short description of your game project.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card p-3">
-          <img src="images/game2.jpg" alt="Game Project" class="img-fluid">
-          <h5 class="mt-3">Game Title 2</h5>
-          <p>Short description of your game project.</p>
-        </div>
+    <div class="modal-overlay" id="imageModal" role="dialog" aria-hidden="true">
+      <div class="modal-content-custom p-3 bg-dark rounded text-light">
+        <button id="modalClose" class="btn btn-sm btn-light mb-2">Close</button>
+        <h5 id="modalTitle"></h5>
+        <img id="modalImage" src="" alt="">
+        <p id="modalDesc" class="mt-2"></p>
       </div>
     </div>
-
-    <!-- Websites -->
-    <h4 class="mt-4 mb-3">🌐 Websites</h4>
-    <div class="row g-4 mb-5">
-      <div class="col-md-4">
-        <div class="card p-3">
-          <img src="images/site1.jpg" alt="Website Project" class="img-fluid">
-          <h5 class="mt-3">Website Project 1</h5>
-          <p>Short description of your website design.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Software -->
-    <h4 class="mt-4 mb-3">💻 Software</h4>
-    <div class="row g-4 mb-5">
-      <div class="col-md-4">
-        <div class="card p-3">
-          <img src="images/software1.jpg" class="img-fluid">
-          <h5 class="mt-3">Software Tool 1</h5>
-          <p>Short description of software or utilities you created.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Entertainment Projects -->
-    <h4 class="mt-4 mb-3">🎬 Entertainment Production</h4>
-    <div class="row align-items-center mb-5">
-      <div class="col-md-6 mb-3 mb-md-0 video-frame">
-        <div class="ratio ratio-16x9">
-          <video controls>
-            <source src="videos/entertainment1.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="col-md-6 text-light">
-        <h5>Featured Video</h5>
-        <p>Film editing, animation, or visual work. Description of techniques and software used.</p>
-      </div>
-    </div>
-
   </div>
 </section>
 
-
-<!-- SKILLS -->
-<section id="skills" class="py-5">
+<section id="skills" class="py-5 bg-dark">
   <div class="container">
     <h2 class="section-title">Skills</h2>
-
-    <!-- <h5>Programming – Front End & Back End Development</h5>
-    <ul>
-      <li>Website & Windows-based Systems: PHP/JQuery/HTML/CSS/Bootstrap & Microsoft Visual Studio (C#/VB), Node.js, Python & Machine Learning</li>
-      <li>Database Management: MySQL / Microsoft Access / SQL Server / Mongo DB</li>
-      <li>Game Development: Mobile and PC 2D/3D games</li>
-    </ul> -->
     <h5 class="fw-bold text-info">Programming – Technology Stacks</h5>
     <ul>
       <li>MERN: Full JavaScript stack (frontend + backend + database query).</li>
@@ -467,7 +396,6 @@
       <li>Python Flask Stack: Full Python with Machine Learning Stack with any databases</li>
       <li>Windows stack / Microsoft stack: Windows-based (C#, .NET, SQL Server/MySQL/ MS Access, Visual Studio)</li>
       <li>Game Development Stack: Unity engine, rendering, physics, animation etc. for creating 3D and 2D games</li>
-    
     </ul>
 
     <h5 class="fw-bold text-info">Graphics and Video Editing</h5>
@@ -484,16 +412,14 @@
       <li>Basic LAN repair & Internet troubleshooting</li>
     </ul>
 
-   <h5 class="fw-bold text-info">Music & Audio</h5>
+    <h5 class="fw-bold text-info">Music & Audio</h5>
     <ul>
       <li>Music production & audio editing</li>
     </ul>
   </div>
-</section>
 
-<!-- TRAININGS & SEMINARS -->
-<section id="trainings" class="py-5 bg-dark">
   <div class="container">
+    <hr class="border-secondary mb-4">
     <h2 class="section-title text-light">Seminars & Trainings</h2>
 
     <div class="timeline-item text-light">
@@ -517,29 +443,21 @@
       <p>Website Development Training for MIMAROPA LGU’s</p>
     </div>
   </div>
-</section>
-
-
-<!-- EXPERIENCE -->
-<section id="experience" class="py-5">
-  <!-- EDUCATION -->
-  
 
   <div class="container">
+    <hr class="border-secondary mb-4">
     <h2>Education and Work Experience</h2>
 
-    <!-- CURRENT WORK HIGHLIGHT -->
-      <div class="timeline-item border-start border-3 border-info ps-3 mb-4">
-       <h5 class="fw-bold text-info">Bachelor of Science in Information Technology</h5>
+    <div class="timeline-item border-start border-3 border-info ps-3 mb-4">
+      <h5 class="fw-bold text-info">Bachelor of Science in Information Technology</h5>
       <small>Marinduque State University — 2011–2016</small>
       <p>Tanza, Boac, Marinduque</p>
 
       <h5 class="fw-bold text-info">Masters in Information Technology</h5>
       <small>Marinduque State University — 2024–present</small>
       <p>Tanza, Boac, Marinduque</p>
-      </div>
+    </div>
     <div class="timeline-item border-start border-3 border-info ps-3 mb-4">
-    
       <h5 class="fw-bold text-info">University Lecturer – Marinduque State University <span class="badge bg-info text-dark">Current Work</span></h5>
       <span class="timeline-date">Feb 2024 – Present</span>
       <p>Teaching the following subjects:</p>
@@ -552,6 +470,7 @@
         <li>Human and Computer Interaction</li>
         <li>Web Programming 2</li>
         <li>Ethical Hacking</li>
+        <li>Computer Programming 1</li>
       </ul>
       <p>Research & Publications:</p>
       <ul>
@@ -571,81 +490,76 @@
       <p>Part of the university web development team, responsible for designing, maintaining, and improving the university's web systems and portals.</p>
     </div>
 
-    <!-- PREVIOUS WORK EXPERIENCES -->
     <div class="timeline-item border-start border-3 border-info ps-3 mb-4">
-    
-    <h5 class="fw-bold text-info">Administrative Aide I – ICT Section, LGU-Boac</h5>
+      <h5 class="fw-bold text-info">Administrative Aide I – ICT Section, LGU-Boac</h5>
       <span class="timeline-date">Jul 1, 2016 – Feb 2023</span>
       <p>Provided IT support, maintenance, and ICT-related services for LGU-Boac.</p>
     </div>
 
     <div class="timeline-item border-start border-3 border-info ps-3 mb-4">
-    
-     <h5 class="fw-bold text-info">Electronic Data Processing Specialist Eligibility – DICT</h5>
+      <h5 class="fw-bold text-info">Electronic Data Processing Specialist Eligibility – DICT</h5>
       <span class="timeline-date">Nov 27, 2021</span>
     </div>
 
-
-   <div class="timeline-item border-start border-3 border-info ps-3 mb-4">
-    
+    <div class="timeline-item border-start border-3 border-info ps-3 mb-4">
       <h5 class="fw-bold text-info">Electronic Data Processing Examination Proctor – DICT</h5>
       <span class="timeline-date">Nov 19, 2022</span>
     </div>
-  <div class="timeline-item border-start border-3 border-info ps-3 mb-4">
-    
-     <h5 class="fw-bold text-info">Civil Service Eligibility – CSC RO IV</h5>
+    <div class="timeline-item border-start border-3 border-info ps-3 mb-4">
+      <h5 class="fw-bold text-info">Civil Service Eligibility – CSC RO IV</h5>
       <span class="timeline-date">Jun 23, 2022</span>
     </div>
-   <div class="timeline-item border-start border-3 border-info ps-3 mb-4">
-    
-     <h5 class="fw-bold text-info">Digital Literacy Trainer – Microsoft Office & Adobe Photoshop</h5>
+    <div class="timeline-item border-start border-3 border-info ps-3 mb-4">
+      <h5 class="fw-bold text-info">Digital Literacy Trainer – Microsoft Office & Adobe Photoshop</h5>
       <span class="timeline-date">Dec 11–22, 2017</span>
       <p>Trained barangay secretaries and ALS participants in computer skills and graphics editing.</p>
     </div>
-  <div class="timeline-item border-start border-3 border-info ps-3 mb-4">
-    
+    <div class="timeline-item border-start border-3 border-info ps-3 mb-4">
       <h5 class="fw-bold text-info">Research & Development Presenter</h5>
       <span class="timeline-date">Mar 16, 2016</span>
       <p>Empowering Student Capacity and Capability through Research and Development – Marinduque State College</p>
     </div>
-
   </div>
 </section>
-<section class="py-5" id="gallery">
+
+<section id="certificates" class="py-5" style="background-color: #0b0c0e;">
   <div class="container">
-<h2 class="section-title text-light mb-5">Gallery</h2>
+    <h2 class="section-title text-light mb-4">Certificates & Credentials</h2>
+    <div class="row g-3" id="certificateGrid">
+      </div>
+  </div>
+</section>
 
-    <!-- Masonry Gallery (populated by JS) -->
-    <div class="masonry" id="masonryGrid"></div>
-
-    <!-- Modal for clicked images -->
-    <div class="modal-overlay" id="imageModal" role="dialog" aria-hidden="true">
-      <div class="modal-content-custom p-3 bg-dark rounded text-light">
-        <button id="modalClose" class="btn btn-sm btn-light mb-2">Close</button>
-        <h5 id="modalTitle"></h5>
-        <img id="modalImage" src="" alt="">
-        <p id="modalDesc" class="mt-2"></p>
+<div class="modal fade" id="certificateModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content shadow-lg border-0" style="background-color: #16181c; border-radius: 12px;">
+      <div class="modal-header border-0 pb-0 justify-content-end">
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body pt-0 pb-4 text-center">
+        <div class="p-1 bg-dark rounded border border-secondary d-inline-block w-100">
+          <img src="" id="modalCertImage" class="img-fluid rounded w-100" style="max-height: 80vh; object-fit: contain;" alt="Certificate Full View">
+        </div>
       </div>
     </div>
-
   </div>
-  
+</div>
 
-</section>
-
-<!-- FOOTER -->
 <footer class="text-center p-3 mt-5">
-  <p>&copy; 2025 Codewarriork3nz Portfolio – All Rights Reserved</p>
+  <p>&copy; 2026 Codewarriork3nz Portfolio – All Rights Reserved</p>
 </footer>
 
-<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 <script>
-// Image list (uses images/carousel if present, otherwise falls back to project images)
+// Image list for standard portfolio gallery
 const imageList = [
   "images/1.png","images/2.png","images/3.png","images/4.png","images/5.png",
   "images/6.jpg","images/7.jpg","images/8.jpg","images/9.png","images/10.png",
   "images/11.png","images/12.png"
 ];
+
+// Carousel backgrounds
 const carouselImages = [
   "images/carousel/1.jpg",
   "images/carousel/2.jpg",
@@ -657,15 +571,26 @@ const carouselImages = [
   "images/carousel/8.png",
   "images/carousel/9.png"
 ];
+
+// Corrected certificate array matching your exact extensions
+const certificateImages = [
+  "images/certificates/1.png",
+  "images/certificates/2.png",
+  "images/certificates/3.png",
+  "images/certificates/4.png",
+  "images/certificates/5.png",
+  "images/certificates/6.png"
+];
+
 // CAROUSEL
 (function(){
   const carouselRoot = document.getElementById('customCarousel');
+  if(!carouselRoot) return;
   const track = carouselRoot.querySelector('.carousel-track');
   const dotsRoot = carouselRoot.querySelector('.carousel-dots');
   const prevBtn = carouselRoot.querySelector('.carousel-btn.prev');
   const nextBtn = carouselRoot.querySelector('.carousel-btn.next');
 
-  // Direct reference to your carousel array
   const slides = carouselImages;
   let current = 0;
 
@@ -702,6 +627,7 @@ const carouselImages = [
 // GALLERY
 (function(){
   const grid = document.getElementById('masonryGrid');
+  if(!grid) return;
   const modal = document.getElementById('imageModal');
   const modalImage = document.getElementById('modalImage');
   const modalTitle = document.getElementById('modalTitle');
@@ -729,9 +655,31 @@ const carouselImages = [
   modalClose.addEventListener('click', ()=>{ modal.style.display='none'; modal.setAttribute('aria-hidden','true'); });
   modal.addEventListener('click', (e)=>{ if(e.target===modal) { modal.style.display='none'; modal.setAttribute('aria-hidden','true'); } });
 })();
+
+// CERTIFICATES ENGINE (Runs safely now because Bootstrap bundle loaded first)
+(function(){
+  const grid = document.getElementById('certificateGrid');
+  if(!grid) return;
+  const modalImage = document.getElementById('modalCertImage');
+  const bsModal = new bootstrap.Modal(document.getElementById('certificateModal'));
+
+  certificateImages.forEach((imgSrc) => {
+    const col = document.createElement('div');
+    col.className = 'col-6 col-md-4'; 
+    
+    col.innerHTML = `
+      <div class="cert-image-tile shadow-sm">
+        <img src="${imgSrc}" alt="Certificate Preview" loading="lazy">
+      </div>
+    `;
+    grid.appendChild(col);
+
+    col.querySelector('.cert-image-tile').addEventListener('click', () => {
+      modalImage.src = imgSrc;
+      bsModal.show();
+    });
+  });
+})();
 </script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
