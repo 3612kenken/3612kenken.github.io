@@ -86,6 +86,66 @@
   transform: scale(1.03);
 }
 
+/* Carousel styles */
+.custom-carousel {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #0f1114, #0b0c0e);
+  border-radius: 8px;
+}
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+.carousel-slide {
+  min-width: 100%;
+  user-select: none;
+}
+.carousel-slide img {
+  display: block;
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+}
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  background: rgba(0,0,0,0.35);
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  width: 44px;
+  height: 60px;
+}
+.carousel-btn.prev { left: 8px; }
+.carousel-btn.next { right: 8px; }
+.carousel-dots { text-align:center; padding:10px 0; }
+.carousel-dot { display:inline-block; width:10px; height:10px; border-radius:50%; background:#555; margin:0 6px; cursor:pointer; }
+.carousel-dot.active { background:#0d6efd; }
+
+/* Gallery overlay and modal */
+.figure { position: relative; display:block; }
+.overlay {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,0.6));
+  color: #fff;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.figure:hover .overlay { opacity: 1; }
+.overlay h5 { margin:0; font-size:0.95rem; }
+
+.modal-overlay {
+  position: fixed; inset:0; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,0.7); z-index: 9999;
+}
+.modal-content-custom { max-width: 90%; max-height: 90%; }
+.modal-content-custom img { width: 100%; height: auto; border-radius:6px; }
+
+
   </style>
 </head>
 
@@ -111,77 +171,57 @@
   </div>
 </nav>
 
-<section class="py-5">
-  <div class="container">
-    <div class="text-center mb-5">
+
+<!-- CAROUSEL -->
+<section id="hero-carousel" class="py-4">
+      <div class="text-center mb-5">
       <h1 class="fw-bold display-4">Developer, Creator & Digital Artist</h1>
       <p class="lead mt-3">Game Development • Web Engineering • Software & Entertainment Production</p>
     </div>
-
-    <!-- Masonry Gallery -->
-    <div class="masonry">
-
-      <div class="masonry-item">
-        <img src="./images/1.png" alt="Gallery Image 1">
-      </div>
-
-      <div class="masonry-item">
-        <img src="./images/2.png" alt="Gallery Image 2">
-      </div>
-
-    
-
-      <div class="masonry-item">
-        <img src="./images/4.png" alt="Gallery Image 4">
-      </div>
-
-      <div class="masonry-item">
-        <img src="./images/5.png" alt="Gallery Image 5">
-      </div>
-
-   
-
-      <div class="masonry-item">
-        <img src="./images/7.jpg" alt="Gallery Image 7">
-      </div>
-
-      <div class="masonry-item">
-        <img src="./images/8.jpg" alt="Gallery Image 8">
-      </div>
-         <div class="masonry-item">
-        <img src="./images/9.png" alt="Gallery Image 8">
-      </div>
-        <div class="masonry-item">
-        <img src="./images/10.png" alt="Gallery Image 8">
-      </div>
-        <div class="masonry-item">
-        <img src="./images/11.png" alt="Gallery Image 8">
-      </div>
- <div class="masonry-item">
-        <img src="./images/12.png" alt="Gallery Image 8">
-      </div>
+  <div class="container">
+    <div class="custom-carousel" id="customCarousel" aria-label="Image carousel">
+      <button class="carousel-btn prev" aria-label="Previous">‹</button>
+      <div class="carousel-track"></div>
+      <button class="carousel-btn next" aria-label="Next">›</button>
+      <div class="carousel-dots"></div>
     </div>
   </div>
 </section>
 
+<!-- MAJOR ACCOMPLISHMENTS / HIGHLIGHTS -->
+<section id="highlights" class="py-5 bg-secondary bg-gradient text-light">
+  <div class="container">
+    <h2 class="section-title text-light">Major Accomplishments / Highlights</h2>
+    <ul>
+      <li>Contributed to software development projects for the Municipality of Boac.</li>
+      <li>Led multimedia production and promotional video development for the Municipality of Boac (2016–2022).</li>
+      <li>Member of a game development team nominated for the National Level-Up 2 Event in Laoag, Ilocos Norte (Professional Category).</li>
+      <li>Part of the Marinduque State University development team that created the MarSU Website Phase 1 (2025).</li>
+      <li>Developed the Customer Satisfaction Survey System for clients and administrators at MarSU.</li>
+      <li>Recognized for high teaching effectiveness in Software/Web Programming, Game Development, and Ethical Hacking.</li>
+      <li>Authored and presented research at international forums, covering Machine Learning, Blockchain, and software-based solutions, supported by MVPs (Minimum Viable Products) and functional prototypes.</li>
+    </ul>
+  </div>
+</section>
+
+
+
 
 <!-- FEATURED VIDEOS SECTION (THEATER MODE) -->
-<section id="videos" class="py-5 bg-dark">
+ <section id="videos" class="py-5 bg-dark">
   <div class="container">
     <h2 class="section-title text-light mb-5">🎬 Featured Videos</h2>
 
     <div class="row align-items-center mb-5">
 <div class="col-md-6 mb-3 mb-md-0 video-frame">
   <div class="ratio ratio-16x9">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/wEaRxrkDP0M?si=QvDLrpT9GALdaycb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cigNz0JIuHQ?si=42fCu5YVHEWU7yw7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   </div>
 </div>
 
 
   <div class="col-md-6 text-light">
-    <h4>Customer Satisfaction Survey System</h4>
+    <h4>Marinduque State University website (Phase 1) </h4>
    <p>A demonstration of the admin panel for managing and monitoring customer feedback efficiently.</p>
 </div>
 </div>
@@ -195,8 +235,42 @@
         </div>
       </div>
       <div class="col-md-6 text-light">
-        <h4>Marinduque Ground Zero: Command & Consequence</h4>
-       <p>A 3D HD disaster and rescue strategy game, featuring city-building mechanics and mission-based gameplay.</p>
+        <h4>Customer Satisfaction Survey System</h4>
+       <p>A demonstration of the admin panel for managing and monitoring customer feedback efficiently.</p>
+</div>
+    </div>
+
+
+  </div>
+
+  <div class="container">
+
+
+    <div class="row align-items-center mb-5">
+<div class="col-md-6 mb-3 mb-md-0 video-frame">
+  <div class="ratio ratio-16x9">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wEaRxrkDP0M?si=QvDLrpT9GALdaycb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+  </div>
+</div>
+
+
+  <div class="col-md-6 text-light">
+    <h4>Marinduque Ground Zero: Command & Consequence</h4>
+   <p>A 3D HD disaster and rescue strategy game, featuring city-building mechanics and mission-based gameplay.</p>
+</div>
+</div>
+
+
+    <div class="row align-items-center mb-5 flex-md-row-reverse">
+      <div class="col-md-6 mb-3 mb-md-0 video-frame">
+        <div class="ratio ratio-16x9">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/ePi22RuTPZc?si=Tac0t_N23t-LtsY1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>   </div>
+      </div>
+      <div class="col-md-6 text-light">
+       <h4>Project Tumba - Team CTRL ALT Defeat</h4>
+       <p>As our game development team nominated to enter national Level-up 2 event at Laoag Ilocos Norte in the professional category.</p>
     </div>
     </div>
 
@@ -205,7 +279,7 @@
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" class="py-5" style="display:none;">
+<section id="projects" class="py-5" style="display: none;">
   <div class="container">
     <h2 class="section-title">Featured Projects</h2>
 
@@ -270,6 +344,7 @@
 
   </div>
 </section>
+
 
 <!-- SKILLS -->
 <section id="skills" class="py-5">
@@ -433,7 +508,27 @@
 
   </div>
 </section>
+<section class="py-5" id="gallery">
+  <div class="container">
 
+
+    <!-- Masonry Gallery (populated by JS) -->
+    <div class="masonry" id="masonryGrid"></div>
+
+    <!-- Modal for clicked images -->
+    <div class="modal-overlay" id="imageModal" role="dialog" aria-hidden="true">
+      <div class="modal-content-custom p-3 bg-dark rounded text-light">
+        <button id="modalClose" class="btn btn-sm btn-light mb-2">Close</button>
+        <h5 id="modalTitle"></h5>
+        <img id="modalImage" src="" alt="">
+        <p id="modalDesc" class="mt-2"></p>
+      </div>
+    </div>
+
+  </div>
+  
+
+</section>
 
 <!-- FOOTER -->
 <footer class="text-center p-3 mt-5">
@@ -441,6 +536,89 @@
 </footer>
 
 <!-- Bootstrap JS -->
+<script>
+// Image list (uses images/carousel if present, otherwise falls back to project images)
+const imageList = [
+  "images/1.png","images/2.png","images/3.png","images/4.png","images/5.png",
+  "images/6.jpg","images/7.jpg","images/8.jpg","images/9.png","images/10.png",
+  "images/11.png","images/12.png"
+];
+
+// CAROUSEL
+(function(){
+  const carouselRoot = document.getElementById('customCarousel');
+  const track = carouselRoot.querySelector('.carousel-track');
+  const dotsRoot = carouselRoot.querySelector('.carousel-dots');
+  const prevBtn = carouselRoot.querySelector('.carousel-btn.prev');
+  const nextBtn = carouselRoot.querySelector('.carousel-btn.next');
+
+  const carouselImages = imageList.filter(p=> p.includes('/carousel/'));
+  const slides = (carouselImages.length ? carouselImages : imageList.slice(0,5));
+
+  let current = 0;
+
+  function build() {
+    slides.forEach((src,i)=>{
+      const slide = document.createElement('div'); slide.className='carousel-slide';
+      const img = document.createElement('img'); img.src = src; img.alt = src.split('/').pop();
+      slide.appendChild(img); track.appendChild(slide);
+
+      const dot = document.createElement('span'); dot.className='carousel-dot';
+      dot.addEventListener('click', ()=> goTo(i)); dotsRoot.appendChild(dot);
+    });
+    update();
+  }
+
+  function update(){
+    track.style.transform = `translateX(-${current * 100}%)`;
+    Array.from(dotsRoot.children).forEach((d,idx)=> d.classList.toggle('active', idx===current));
+  }
+  function prev(){ current = (current-1+slides.length)%slides.length; update(); }
+  function next(){ current = (current+1)%slides.length; update(); }
+  function goTo(i){ current = i; update(); }
+
+  prevBtn.addEventListener('click', prev);
+  nextBtn.addEventListener('click', next);
+
+  let autoplay = setInterval(next, 4000);
+  carouselRoot.addEventListener('mouseenter', ()=> clearInterval(autoplay));
+  carouselRoot.addEventListener('mouseleave', ()=> autoplay = setInterval(next, 4000));
+
+  build();
+})();
+
+// GALLERY
+(function(){
+  const grid = document.getElementById('masonryGrid');
+  const modal = document.getElementById('imageModal');
+  const modalImage = document.getElementById('modalImage');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalDesc = document.getElementById('modalDesc');
+  const modalClose = document.getElementById('modalClose');
+
+  function prettyName(path){
+    return path.split('/').pop().replace(/\.[^.]+$/,'').replace(/[-_]/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
+  }
+
+  imageList.forEach(src=>{
+    const item = document.createElement('div'); item.className='masonry-item';
+    const fig = document.createElement('figure'); fig.className='figure';
+    const img = document.createElement('img'); img.src = src; img.alt = prettyName(src); img.className='img-fluid gallery-img';
+    const ov = document.createElement('div'); ov.className='overlay';
+    const h = document.createElement('h5'); h.textContent = prettyName(src);
+    ov.appendChild(h); fig.appendChild(img); fig.appendChild(ov); item.appendChild(fig); grid.appendChild(item);
+
+    fig.addEventListener('click', ()=>{
+      modalImage.src = src; modalTitle.textContent = prettyName(src); modalDesc.textContent = "Click or hover to view details. File: "+src.split('/').pop();
+      modal.style.display = 'flex'; modal.setAttribute('aria-hidden','false');
+    });
+  });
+
+  modalClose.addEventListener('click', ()=>{ modal.style.display='none'; modal.setAttribute('aria-hidden','true'); });
+  modal.addEventListener('click', (e)=>{ if(e.target===modal) { modal.style.display='none'; modal.setAttribute('aria-hidden','true'); } });
+})();
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
