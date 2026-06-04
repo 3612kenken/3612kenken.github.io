@@ -119,6 +119,31 @@
   width: 44px;
   height: 60px;
 }
+.featured-video {
+    max-width: 1400px;
+    margin: 0 auto 4rem;
+    background: #111;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.featured-video .video-info {
+    padding: 1.5rem;
+}
+
+
+
+.video-frame {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.video-frame iframe {
+    transition: transform .3s ease;
+}
+
+.video-frame:hover iframe {
+    transform: scale(1.02);
+}
 .carousel-btn.prev { left: 8px; }
 .carousel-btn.next { right: 8px; }
 .carousel-dots { text-align:center; padding:10px 0; }
@@ -189,29 +214,109 @@
 </section>
 
 <!-- MAJOR ACCOMPLISHMENTS / HIGHLIGHTS -->
-<section id="highlights" class="py-5 bg-secondary bg-gradient text-light">
+<section id="highlights" class="py-5 bg-dark bg-gradient text-light">
   <div class="container">
-    <h2 class="section-title text-light">Major Accomplishments / Highlights</h2>
-    <ul>
-      <li>Led multimedia production and promotional video development for the Municipality of Boac (2016–2022).</li>
-      <li>Contributed to software development projects for the Municipality of Boac including official website, civil registry petition system, Daily Time Record(DTR) System, barangay profiling system and etc. (2016-2022)</li>
-      <li>Member of a game development team nominated for the National Level-Up 2 Event in Laoag, Ilocos Norte (Professional Category). (2025)</li>
-      <li>Part of the Marinduque State University development team that created the MarSU Website Phase 1 (2025).</li>
-      <li>Developed the Customer Satisfaction Survey System for clients and administrators at MarSU.</li>
-      <li>Recognized for high teaching effectiveness in Software/Web Programming, Game Development, and Ethical Hacking. (2024-present)</li>
-      <li>Authored and presented research at international forums, covering Machine Learning, Blockchain, and software-based solutions, supported by MVPs (Minimum Viable Products) and functional prototypes.</li>
-    </ul>
+    <h2 class="section-title text-light mb-4">Major Accomplishments & Highlights</h2>
+    
+    <div class="row g-4">
+      
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-start border-primary border-4 p-4 shadow-sm" style="background-color: #16181c;">
+          <div class="d-flex align-items-center mb-3">
+            <span class="fs-3 me-2">🏛️</span>
+            <h5 class="card-title text-info mb-0 fw-bold">LGU Boac Service</h5>
+          </div>
+          <p class="card-text small text-light">2016 – 2022</p>
+          <p class="card-text text-light">Led municipal multimedia production and developed core systems including the official website, civil registry system, DTR system, and barangay profiling utilities.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-start border-warning border-4 p-4 shadow-sm" style="background-color: #16181c;">
+          <div class="d-flex align-items-center mb-3">
+            <span class="fs-3 me-2">🎮</span>
+            <h5 class="card-title text-warning mb-0 fw-bold">Game Engineering</h5>
+          </div>
+          <p class="card-text small text-light">2025</p>
+          <p class="card-text text-light">Core developer for the team nominated to the prestigious <strong>National Level-Up 2 Event</strong> in Laoag, Ilocos Norte under the Professional Category.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-start border-success border-4 p-4 shadow-sm" style="background-color: #16181c;">
+          <div class="d-flex align-items-center mb-3">
+            <span class="fs-3 me-2">🏫</span>
+            <h5 class="card-title text-success mb-0 fw-bold">MarSU Web Systems</h5>
+          </div>
+          <p class="card-text small text-light">2024 – Present</p>
+          <p class="card-text text-light">Co-developed MarSU Website Phase 1 and fully engineered the institutional Customer Satisfaction Survey System for administrators and clients.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-6">
+        <div class="card h-100 border-start border-info border-4 p-4 shadow-sm" style="background-color: #16181c;">
+          <div class="d-flex align-items-center mb-3">
+            <span class="fs-3 me-2">👨‍🏫</span>
+            <h5 class="card-title text-info mb-0 fw-bold">Instructional Leadership</h5>
+          </div>
+          <p class="card-text small text-light">2024 – Present</p>
+          <p class="card-text text-light">Recognized for exceptionally high teaching effectiveness ratings across advanced curriculum tracks: Software Programming, Game Development, and Ethical Hacking.</p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-lg-6">
+        <div class="card h-100 border-start border-danger border-4 p-4 shadow-sm" style="background-color: #16181c;">
+          <div class="d-flex align-items-center mb-3">
+            <span class="fs-3 me-2">🔬</span>
+            <h5 class="card-title text-danger mb-0 fw-bold">Research & International Forums</h5>
+          </div>
+          <p class="card-text small text-light">Active Portfolio</p>
+          <p class="card-text text-light">Authored and presented research globally, delivering viable functional prototypes and MVPs leveraging <strong>Machine Learning</strong> and <strong>Blockchain architecture</strong>.</p>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
 
-
-
 <!-- FEATURED VIDEOS SECTION (THEATER MODE) -->
- <section id="videos" class="py-5 bg-dark">
+ <section id="videos" class=" bg-dark py-5 ">
+  
   <div class="container">
-    <h2 class="section-title text-light mb-5">🎬 Featured Videos</h2>
+    <h2 class="section-title text-light mb-5"> Featured Project</h2>
+<!-- FEATURED VIDEO -->
+<div class="featured-video">
+    <div class="ratio ratio-16x9">
+        <iframe 
+            src="https://www.youtube.com/embed/wEaRxrkDP0M?si=N1Lx3l5kWdliPXQb"
+            title="Monsters of War: Domain Rule Trailer"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+        </iframe>
+    </div>
 
+    <div class="video-info text-light">
+        <h3>
+            Monsters of War: Domain Rule (MWDR) - Pre-production Trailer  
+            <span class="badge bg-info text-dark">On-going</span>
+        </h3>
+
+        <p class="lead mb-0">
+            A PvPvE war-action strategy game where players command military forces,
+            capture strategic domains, and battle rival factions alongside
+            extinction-level monsters. Featuring third-person combat, vehicles,
+            AI squad support, and dynamic territory warfare.
+        </p>
+    </div>
+</div>
+</div>
+
+  
+  <div class="container">
+    <h3 class="section-title text-light mb-5">Other Featured Projects</h3>
+<h4 class="text-info mb-3"> Website Development</h4>
+<hr class="border-secondary mb-4">
     <div class="row align-items-center mb-5">
 <div class="col-md-6 mb-3 mb-md-0 video-frame">
   <div class="ratio ratio-16x9">
@@ -233,7 +338,7 @@
   </div>
       </div>
       <div class="col-md-6 text-light">
-        <h4>Customer Satisfaction Survey System</h4>
+        <h4>Customer Satisfaction Survey System (2024)</h4>
        <p>A demonstration of the admin panel for managing and monitoring customer feedback efficiently.</p>
 </div>
     </div>
@@ -242,7 +347,8 @@
   </div>
 
   <div class="container">
-
+<h4 class="text-info mb-3"> Game Development</h4>
+<hr class="border-secondary mb-4">
 
     <div class="row align-items-center mb-5">
 <div class="col-md-6 mb-3 mb-md-0 video-frame">
@@ -540,7 +646,17 @@ const imageList = [
   "images/6.jpg","images/7.jpg","images/8.jpg","images/9.png","images/10.png",
   "images/11.png","images/12.png"
 ];
-
+const carouselImages = [
+  "images/carousel/1.jpg",
+  "images/carousel/2.jpg",
+  "images/carousel/3.jpg",
+  "images/carousel/4.jpg",
+  "images/carousel/5.png",
+  "images/carousel/6.png",
+  "images/carousel/7.png",
+  "images/carousel/8.png",
+  "images/carousel/9.png"
+];
 // CAROUSEL
 (function(){
   const carouselRoot = document.getElementById('customCarousel');
@@ -549,37 +665,36 @@ const imageList = [
   const prevBtn = carouselRoot.querySelector('.carousel-btn.prev');
   const nextBtn = carouselRoot.querySelector('.carousel-btn.next');
 
-  const carouselImages = imageList.filter(p=> p.includes('/carousel/'));
-  const slides = (carouselImages.length ? carouselImages : imageList.slice(0,5));
-
+  // Direct reference to your carousel array
+  const slides = carouselImages;
   let current = 0;
 
   function build() {
-    slides.forEach((src,i)=>{
-      const slide = document.createElement('div'); slide.className='carousel-slide';
+    slides.forEach((src, i) => {
+      const slide = document.createElement('div'); slide.className = 'carousel-slide';
       const img = document.createElement('img'); img.src = src; img.alt = src.split('/').pop();
       slide.appendChild(img); track.appendChild(slide);
 
-      const dot = document.createElement('span'); dot.className='carousel-dot';
-      dot.addEventListener('click', ()=> goTo(i)); dotsRoot.appendChild(dot);
+      const dot = document.createElement('span'); dot.className = 'carousel-dot';
+      dot.addEventListener('click', () => goTo(i)); dotsRoot.appendChild(dot);
     });
     update();
   }
 
   function update(){
     track.style.transform = `translateX(-${current * 100}%)`;
-    Array.from(dotsRoot.children).forEach((d,idx)=> d.classList.toggle('active', idx===current));
+    Array.from(dotsRoot.children).forEach((d, idx) => d.classList.toggle('active', idx === current));
   }
-  function prev(){ current = (current-1+slides.length)%slides.length; update(); }
-  function next(){ current = (current+1)%slides.length; update(); }
+  function prev(){ current = (current - 1 + slides.length) % slides.length; update(); }
+  function next(){ current = (current + 1) % slides.length; update(); }
   function goTo(i){ current = i; update(); }
 
   prevBtn.addEventListener('click', prev);
   nextBtn.addEventListener('click', next);
 
   let autoplay = setInterval(next, 4000);
-  carouselRoot.addEventListener('mouseenter', ()=> clearInterval(autoplay));
-  carouselRoot.addEventListener('mouseleave', ()=> autoplay = setInterval(next, 4000));
+  carouselRoot.addEventListener('mouseenter', () => clearInterval(autoplay));
+  carouselRoot.addEventListener('mouseleave', () => autoplay = setInterval(next, 4000));
 
   build();
 })();
