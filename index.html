@@ -6,207 +6,9 @@
   <title>Portfolio | Developer</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+ <link href="styles.css" rel="stylesheet">
 
-  <style>
-    body {
-      background-color: #0d0f12;
-      color: #e0e0e0;
-    }
-    .navbar, footer {
-      background-color: #0b0c0e;
-    }
-    .section-title {
-      border-left: 4px solid #0d6efd;
-      padding-left: 10px;
-      margin-bottom: 20px;
-    }
-    .card {
-      background-color: #16181c;
-      border: none;
-    }
-    .card img, .card video {
-      border-radius: 6px;
-    }
-    .skill-tag {
-      background: #1b1e23;
-      border: 1px solid #2b2f36;
-      padding: 6px 12px;
-      border-radius: 20px;
-      margin: 4px;
-      display: inline-block;
-    }
-    .gallery-img:hover,
-    .video-frame:hover {
-      transform: scale(1.03);
-      transition: transform 0.3s ease-in-out;
-    }
-    .video-frame video {
-      border-radius: 6px;
-    }
-    .timeline-item {
-      margin-bottom: 15px;
-    }
-    .timeline-date {
-      font-size: 0.9rem;
-      color: #888;
-    }
-
-    /* Masonry Gallery */
-    .masonry {
-      column-count: 4;
-      column-gap: 1rem;
-    }
-
-    @media (max-width: 992px) {
-      .masonry { column-count: 3; }
-    }
-
-    @media (max-width: 768px) {
-      .masonry { column-count: 2; }
-    }
-
-    @media (max-width: 576px) {
-      .masonry { column-count: 1; }
-    }
-
-    .masonry-item {
-      break-inside: avoid;
-      margin-bottom: 1rem;
-    }
-
-    .masonry-item img {
-      width: 100%;
-      height: auto;     /* ← Natural resolution */
-      border-radius: 6px;
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .masonry-item img:hover {
-      transform: scale(1.03);
-    }
-
-    /* Carousel styles */
-    .custom-carousel {
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(180deg, #0f1114, #0b0c0e);
-      border-radius: 8px;
-    }
-    .carousel-track {
-      display: flex;
-      transition: transform 0.5s ease;
-    }
-    .carousel-slide {
-      min-width: 100%;
-      user-select: none;
-    }
-    .carousel-slide img {
-      display: block;
-      width: 100%;
-      height: 360px;
-      object-fit: cover;
-    }
-    .carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 5;
-      background: rgba(0,0,0,0.35);
-      border: none;
-      color: #fff;
-      font-size: 2rem;
-      width: 44px;
-      height: 60px;
-    }
-    .featured-video {
-        max-width: 1400px;
-        margin: 0 auto 4rem;
-        background: #111;
-        border-radius: 12px;
-        overflow: hidden;
-    }
-    .featured-video .video-info {
-        padding: 1.5rem;
-    }
-html {
-    scroll-behavior: smooth;
-}
-.back-to-top {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: rgba(255,255,255,.15);
-    color: rgba(255,255,255,.75);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-}
-    /* Styling for Certificate Tiles */
-    .cert-image-tile {
-      cursor: pointer;
-      overflow: hidden;
-      border-radius: 8px;
-      border: 2px solid #2b2f36;
-      background-color: #16181c;
-      transition: transform 0.25s ease-in-out, border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
-    }
-
-    .cert-image-tile:hover {
-      transform: scale(1.03);
-      border-color: #0d6efd;
-      box-shadow: 0 8px 24px rgba(13, 110, 253, 0.2);
-    }
-
-    .cert-image-tile img {
-      width: 100%;
-      height: 240px; /* Forces uniform thumbnail height across your grid layout */
-      object-fit: cover; /* Crops image neatly into its thumbnail bounding box */
-      display: block;
-    }
-
-    .video-frame {
-        overflow: hidden;
-        border-radius: 10px;
-    }
-
-    .video-frame iframe {
-        transition: transform .3s ease;
-    }
-
-    .video-frame:hover iframe {
-        transform: scale(1.02);
-    }
-    .carousel-btn.prev { left: 8px; }
-    .carousel-btn.next { right: 8px; }
-    .carousel-dots { text-align:center; padding:10px 0; }
-    .carousel-dot { display:inline-block; width:10px; height:10px; border-radius:50%; background:#555; margin:0 6px; cursor:pointer; }
-    .carousel-dot.active { background:#0d6efd; }
-
-    /* Gallery overlay and modal */
-    .figure { position: relative; display:block; }
-    .overlay {
-      position: absolute;
-      left: 0; right: 0; bottom: 0;
-      background: linear-gradient(180deg, transparent, rgba(0,0,0,0.6));
-      color: #fff;
-      padding: 10px;
-      opacity: 0;
-      transition: opacity 0.2s ease;
-    }
-    .figure:hover .overlay { opacity: 1; }
-    .overlay h5 { margin:0; font-size:0.95rem; }
-
-    .modal-overlay {
-      position: fixed; inset:0; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,0.7); z-index: 9999;
-    }
-    .modal-content-custom { max-width: 90%; max-height: 90%; }
-    .modal-content-custom img { width: 100%; height: auto; border-radius:6px; }
-  </style>
+ 
 </head>
 <body id="top">
 
@@ -218,7 +20,7 @@ html {
     </button>
 
     <div class="collapse navbar-collapse" id="navmenu">
-      <ul class="navbar-nav ms-auto">
+      <ul class="navbar-nav ms-auto" id="navsubmenu">
         <li class="nav-item"><a href="#highlights" class="nav-link">Highlights</a></li>
         <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
         
@@ -399,6 +201,35 @@ html {
         <p>A 2015 capstone project featuring a multiplayer RPG quiz game where teachers create customized learning worlds with towers, monsters, quizzes, and study materials, while students learn through interactive gameplay.</p>
       </div>
     </div>
+    
+  </div>
+
+  
+  <div class="container">
+    <h4 class="text-info mb-3"> Multimedia Production</h4>
+    <hr class="border-secondary mb-4">
+
+
+    <div class="row align-items-center mb-5 flex-md-row-reverse">
+      <div class="col-md-6 mb-3 mb-md-0 video-frame">
+        <div class="ratio ratio-16x9">
+        <iframe
+            src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/v/17jv8NBFN6/"
+            allowfullscreen
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+        </iframe>
+      </div>
+      </div>
+      <div class="col-md-6 text-light">
+        <h4>Moriones Lenten Rites – Municipality of Boac <small><span class="badge bg-secondary text-dark">2019</span></small></h4>
+        <p> Participated as part of the production team for the official multimedia
+    coverage of the Moriones Lenten Rites 2019 in Boac, Marinduque, documenting
+    one of the Philippines' most celebrated Holy Week cultural traditions through
+    video production and event coverage.</p>
+      </div>
+    </div>
+    </div>
+    
   </div>
 </section>
 
@@ -611,136 +442,8 @@ html {
 <a href="#top" class="back-to-top" aria-label="Back to top">
     ↑
 </a>
-<script>
-// Image list for standard portfolio gallery
-const imageList = [
-  "images/1.png","images/2.png","images/3.png","images/4.png","images/5.png",
-  "images/6.jpg","images/7.jpg","images/8.jpg","images/9.png","images/10.png",
-  "images/11.png","images/12.png"
-];
+<script src="scripts.js"></script>
 
-// Carousel backgrounds
-const carouselImages = [
-  "images/carousel/1.jpg",
-  "images/carousel/2.jpg",
-  "images/carousel/3.jpg",
-  "images/carousel/4.jpg",
-  "images/carousel/5.png",
-  "images/carousel/6.png",
-  "images/carousel/7.png",
-  "images/carousel/8.png",
-  "images/carousel/9.png"
-];
-
-// Corrected certificate array matching your exact extensions
-const certificateImages = [
-  "images/certificates/1.png",
-  "images/certificates/2.png",
-  "images/certificates/3.png",
-  "images/certificates/4.png",
-  "images/certificates/5.png",
-  "images/certificates/6.png"
-];
-
-// CAROUSEL
-(function(){
-  const carouselRoot = document.getElementById('customCarousel');
-  if(!carouselRoot) return;
-  const track = carouselRoot.querySelector('.carousel-track');
-  const dotsRoot = carouselRoot.querySelector('.carousel-dots');
-  const prevBtn = carouselRoot.querySelector('.carousel-btn.prev');
-  const nextBtn = carouselRoot.querySelector('.carousel-btn.next');
-
-  const slides = carouselImages;
-  let current = 0;
-
-  function build() {
-    slides.forEach((src, i) => {
-      const slide = document.createElement('div'); slide.className = 'carousel-slide';
-      const img = document.createElement('img'); img.src = src; img.alt = src.split('/').pop();
-      slide.appendChild(img); track.appendChild(slide);
-
-      const dot = document.createElement('span'); dot.className = 'carousel-dot';
-      dot.addEventListener('click', () => goTo(i)); dotsRoot.appendChild(dot);
-    });
-    update();
-  }
-
-  function update(){
-    track.style.transform = `translateX(-${current * 100}%)`;
-    Array.from(dotsRoot.children).forEach((d, idx) => d.classList.toggle('active', idx === current));
-  }
-  function prev(){ current = (current - 1 + slides.length) % slides.length; update(); }
-  function next(){ current = (current + 1) % slides.length; update(); }
-  function goTo(i){ current = i; update(); }
-
-  prevBtn.addEventListener('click', prev);
-  nextBtn.addEventListener('click', next);
-
-  let autoplay = setInterval(next, 4000);
-  carouselRoot.addEventListener('mouseenter', () => clearInterval(autoplay));
-  carouselRoot.addEventListener('mouseleave', () => autoplay = setInterval(next, 4000));
-
-  build();
-})();
-
-// GALLERY
-(function(){
-  const grid = document.getElementById('masonryGrid');
-  if(!grid) return;
-  const modal = document.getElementById('imageModal');
-  const modalImage = document.getElementById('modalImage');
-  const modalTitle = document.getElementById('modalTitle');
-  const modalDesc = document.getElementById('modalDesc');
-  const modalClose = document.getElementById('modalClose');
-
-  function prettyName(path){
-    return path.split('/').pop().replace(/\.[^.]+$/,'').replace(/[-_]/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
-  }
-
-  imageList.forEach(src=>{
-    const item = document.createElement('div'); item.className='masonry-item';
-    const fig = document.createElement('figure'); fig.className='figure';
-    const img = document.createElement('img'); img.src = src; img.alt = prettyName(src); img.className='img-fluid gallery-img';
-    const ov = document.createElement('div'); ov.className='overlay';
-    const h = document.createElement('h5'); h.textContent = prettyName(src);
-    ov.appendChild(h); fig.appendChild(img); fig.appendChild(ov); item.appendChild(fig); grid.appendChild(item);
-
-    fig.addEventListener('click', ()=>{
-      modalImage.src = src; modalTitle.textContent = prettyName(src); modalDesc.textContent = "Click or hover to view details. File: "+src.split('/').pop();
-      modal.style.display = 'flex'; modal.setAttribute('aria-hidden','false');
-    });
-  });
-
-  modalClose.addEventListener('click', ()=>{ modal.style.display='none'; modal.setAttribute('aria-hidden','true'); });
-  modal.addEventListener('click', (e)=>{ if(e.target===modal) { modal.style.display='none'; modal.setAttribute('aria-hidden','true'); } });
-})();
-
-// CERTIFICATES ENGINE (Runs safely now because Bootstrap bundle loaded first)
-(function(){
-  const grid = document.getElementById('certificateGrid');
-  if(!grid) return;
-  const modalImage = document.getElementById('modalCertImage');
-  const bsModal = new bootstrap.Modal(document.getElementById('certificateModal'));
-
-  certificateImages.forEach((imgSrc) => {
-    const col = document.createElement('div');
-    col.className = 'col-6 col-md-4'; 
-    
-    col.innerHTML = `
-      <div class="cert-image-tile shadow-sm">
-        <img src="${imgSrc}" alt="Certificate Preview" loading="lazy">
-      </div>
-    `;
-    grid.appendChild(col);
-
-    col.querySelector('.cert-image-tile').addEventListener('click', () => {
-      modalImage.src = imgSrc;
-      bsModal.show();
-    });
-  });
-})();
-</script>
 
 </body>
 </html>
