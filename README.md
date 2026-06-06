@@ -28,7 +28,3 @@ Welcome to my portfolio website. This repository contains my projects, research,
 
 - Taught game programming and software development courses.
 - Completed 30 units of MSIT with a focus on AI development.
-
-## Contact
-
-- Facebook: https://www.facebook.com/share/p/18kfMppJJr/
