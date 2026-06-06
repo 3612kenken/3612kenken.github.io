@@ -7,37 +7,42 @@
       background-color: #0b0c0e;
     }
     /* Floating transparent nav */
-#navsubmenu {
-    position: fixed;
-    top: 0;
-    left: 80%;
-    transform: translateX(-50%);
+/* Desktop only */
+@media (min-width: 992px) {
 
-    max-width: 1200px;
-    z-index: 1000;
-    padding: 1.3rem 1.5rem;
+    #navsubmenu {
+        position: fixed;
+        top: 0;
+        left: 80%;
+        transform: translateX(-50%);
 
-    background: transparent;
+        max-width: 1200px;
+        z-index: 1000;
+        padding: 1.3rem 1.5rem;
 
-    transition:
-        background 0.3s ease,
-        box-shadow 0.3s ease,
-        backdrop-filter 0.3s ease,
-        opacity 0.4s ease,
-        transform 0.4s ease;
-}
+        background: transparent;
 
-#navsubmenu.scrolled {
-    background: rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
+        transition:
+            background 0.3s ease,
+            box-shadow 0.3s ease,
+            backdrop-filter 0.3s ease,
+            opacity 0.4s ease,
+            transform 0.4s ease;
+    }
 
-/* Hidden after inactivity */
-#navsubmenu.hidden {
-    opacity: 0;
-    pointer-events: none;
-    transform: translateX(-50%) translateY(-20px);
+    #navsubmenu.scrolled {
+        background: rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    /* Hidden after inactivity */
+    #navsubmenu.hidden {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateX(-50%) translateY(-20px);
+    }
+
 }
     .section-title {
       border-left: 4px solid #0d6efd;
