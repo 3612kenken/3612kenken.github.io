@@ -1,4 +1,4 @@
-# Kenneth [Last Name]
+# Kenneth Omiping
 
 Software Developer | AI Developer | Game Programming Instructor
 
