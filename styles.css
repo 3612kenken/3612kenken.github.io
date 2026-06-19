@@ -12,7 +12,7 @@
 
     #navsubmenu {
         position: fixed;
-        top: 0;
+        top: 20;
         left: 80%;
         transform: translateX(-50%);
 
@@ -34,6 +34,7 @@
         background: rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
+        top:0;
     }
 
     /* Hidden after inactivity */
