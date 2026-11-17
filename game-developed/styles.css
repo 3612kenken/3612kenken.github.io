@@ -110,15 +110,79 @@ a {
   overflow: hidden;
   padding: 190px 0 29px;
   background:
-    radial-gradient(ellipse at 75% 30%, rgba(84, 66, 163, 0.21), transparent 38%),
-    radial-gradient(ellipse at 96% 78%, rgba(29, 143, 166, 0.11), transparent 28%),
+    radial-gradient(ellipse at 76% 32%, rgba(154, 123, 255, 0.22), transparent 46%),
+    radial-gradient(ellipse at 92% 76%, rgba(102, 228, 238, 0.14), transparent 36%),
     var(--page);
+}
+
+.hero-bg-carousel {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Gradient alpha mask so the carousel images dissolve into the page background */
+.hero-bg-carousel .carousel-inner {
+  height: 100%;
+  -webkit-mask-image:
+    linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.22) 34%, rgba(0, 0, 0, 0.92) 72%, rgba(0, 0, 0, 0.55) 100%),
+    linear-gradient(180deg, transparent 0%, #000 18%, #000 76%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.22) 34%, rgba(0, 0, 0, 0.92) 72%, rgba(0, 0, 0, 0.55) 100%),
+    linear-gradient(180deg, transparent 0%, #000 18%, #000 76%, transparent 100%);
+  mask-composite: intersect;
+}
+
+.hero-bg-carousel .carousel-item {
+  height: 100%;
+}
+
+.hero-bg-carousel img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.34;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.85) contrast(1.08);
+  transform: scale(1.03);
+}
+
+/* Violet-to-cyan theme color harmonizer */
+.hero-bg-carousel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    125deg,
+    rgba(154, 123, 255, 0.38) 10%,
+    rgba(102, 228, 238, 0.22) 65%,
+    rgba(9, 11, 18, 0.4) 100%
+  );
+  mix-blend-mode: color;
+  pointer-events: none;
+}
+
+/* Deep #090b12 edge & readability blend */
+.hero-bg-carousel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(180deg, rgba(9, 11, 18, 0.78) 0%, rgba(9, 11, 18, 0.18) 46%, rgba(9, 11, 18, 0.85) 88%, var(--page) 100%),
+    radial-gradient(ellipse at 22% 48%, rgba(9, 11, 18, 0.86) 0%, rgba(9, 11, 18, 0.42) 52%, transparent 85%);
+  pointer-events: none;
 }
 
 .hero-grid {
   position: absolute;
   inset: 20% -8% 0 42%;
-  opacity: 0.18;
+  z-index: 1;
+  opacity: 0.14;
   background-image: linear-gradient(rgba(190, 197, 255, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(190, 197, 255, 0.2) 1px, transparent 1px);
   background-size: 50px 50px;
   mask-image: linear-gradient(to left, #000, transparent 88%);
@@ -127,7 +191,7 @@ a {
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .eyebrow {
@@ -221,40 +285,6 @@ h3 {
   color: var(--cyan);
 }
 
-.featured-carousel {
-  max-width: 330px;
-  margin: 0 0 14px auto;
-  overflow: hidden;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-}
-
-.featured-carousel img {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  background: transparent;
-}
-
-.featured-carousel .carousel-indicators {
-  margin-bottom: 7px;
-}
-
-.featured-carousel .carousel-indicators [data-bs-target] {
-  width: 13px;
-  height: 3px;
-  border: 0;
-  border-radius: 3px;
-}
-
-.featured-carousel .carousel-control-prev,
-.featured-carousel .carousel-control-next {
-  width: 14%;
-  opacity: 0.8;
-}
-
 .mentor-card {
   max-width: 330px;
   margin: 0 0 20px auto;
@@ -263,6 +293,7 @@ h3 {
   border-radius: 14px;
   background: linear-gradient(140deg, rgba(32, 34, 54, 0.87), rgba(17, 20, 31, 0.75));
   box-shadow: 0 20px 70px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(8px);
 }
 
 .mentor-icon {
@@ -775,18 +806,84 @@ h3 {
   transform: translateY(-3px);
   border-color: rgba(154, 123, 255, 0.35);
 }
+.news-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: linear-gradient(145deg, rgba(22, 26, 39, 0.93), rgba(16, 18, 28, 0.85));
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
 
-.news-placeholder {
-  min-height: 0;
+.news-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(154, 123, 255, 0.42);
+}
+
+.news-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  background: #0b0d13;
+}
+
+.news-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.news-card:hover .news-media img {
+  transform: scale(1.03);
+}
+
+.news-media-fallback {
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  place-content: center;
   text-align: center;
+  background:
+    radial-gradient(ellipse at 30% 25%, rgba(154, 123, 255, 0.22), transparent 60%),
+    radial-gradient(ellipse at 80% 80%, rgba(102, 228, 238, 0.14), transparent 55%),
+    #0b0d13;
 }
 
-.news-placeholder h3 {
-  margin-bottom: 12px;
+.news-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 24px;
 }
 
-.news-placeholder .team-members {
-  margin-bottom: 0;
+.news-body h3 {
+  margin: 0 0 12px;
+  font-size: 1.38rem;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.news-body p {
+  margin: 0;
+  color: #a5abba;
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.news-body strong {
+  color: #e4ddff;
+  font-weight: 600;
+}
+
+.news-actions {
+  margin-top: auto;
+  padding-top: 20px;
 }
 
 .team-number {
@@ -943,10 +1040,6 @@ h3 {
     margin: 22px 0 0;
   }
 
-  .featured-carousel {
-    margin: 22px 0 14px;
-  }
-
   .hero-bottom {
     margin-top: 55px;
   }
@@ -1062,6 +1155,19 @@ h3 {
     min-height: 0;
   }
 
+  .news-card {
+    grid-template-columns: 1fr;
+  }
+
+  .news-media,
+  .news-media-fallback {
+    min-height: 210px;
+  }
+
+  .news-body {
+    padding: 24px 22px;
+  }
+
   .game-poster {
     height: 330px;
   }
@@ -1104,7 +1210,6 @@ h3 {
   .poster-modal .modal-body {
     padding: 12px;
   }
-
 }
 
 @media (prefers-reduced-motion: reduce) {
